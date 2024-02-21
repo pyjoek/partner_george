@@ -1,0 +1,223 @@
+/* Primary Styles */
+@import url("../inc/fonts/srisakdi.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1em;
+  font-family: "TildaSans", sans-serif;
+  /* font-weight: 300 !important;  */
+  user-select: none;
+  /* background: #F0EBE2 !important; */
+  /* background: rgba(236, 239, 241, .1); */
+  background: rgba(255, 255, 255, 1);
+  /* rgb(24, 119, 242 , .77) */
+  /* background: #f1f2f7; */
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-family: "TildaSans", sans-serif;
+  color: #5e6e66;
+  text-transform: none;
+}
+
+em {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Layout */
+
+.s-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.s-layout__content {
+  /*display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;*/
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Sidebar */
+
+.s-sidebar__trigger {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background: #192b3c;
+}
+
+.s-sidebar__trigger > i {
+  display: inline-block;
+  margin: 1.5em 0 0 1.5em;
+  color: #f07ab0;
+}
+
+.s-sidebar__nav {
+  position: fixed;
+  top: 0;
+  left: -15em;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+  width: 1em;
+  height: 100%;
+  /* background: rgba(236, 239, 241, .4); */
+  background: #53667b;
+  /* background: rgba(243, 115, 33, .3); */
+}
+
+.s-sidebar__nav:hover,
+.s-sidebar__nav:focus,
+.s-sidebar__trigger:focus + .s-sidebar__nav,
+.s-sidebar__trigger:hover + .s-sidebar__nav {
+  left: 0;
+}
+
+.s-sidebar__nav ul {
+  position: absolute;
+  top: 4em;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 15em;
+}
+
+@media (max-width: 993px) {
+  nav {
+    background: rgba(8, 53, 70, 0.8) !important;
+  }
+}
+
+/* Mobile First */
+
+@media (min-width: 990px) {
+  .s-layout__content {
+    margin-left: 0em;
+  }
+  /* Sidebar */
+  .s-sidebar__trigger {
+    width: 4em;
+    /*pamentoa jasho sana apa*/
+  }
+  .s-sidebar__nav {
+    width: 0em;
+    left: 0;
+  }
+}
+
+@media (min-width: 993px) {
+  .s-layout__content {
+    margin-left: 15em;
+  }
+  /* Sidebar */
+  .s-sidebar__trigger {
+    display: none;
+  }
+  .s-sidebar__nav {
+    width: 15em;
+  }
+  .s-sidebar__nav ul {
+    top: 1.3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .sidenav {
+    width: 35% !important;
+  }
+}
+
+.dark-edition .sidebar[data-color="orange"] li.active > a {
+  background: linear-gradient(60deg, #f5700c, #ff9800);
+  /* box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4); */
+}
+
+.sidebar[data-color="orange"] li.active > a {
+  background-color: #ff9800;
+  /* box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4); */
+}
+
+.logoutmodal {
+  width: 50% !important;
+}
+
+@media only screen and (max-width: 601px) {
+  .logoutmodal {
+    width: 80% !important;
+    outline: none;
+    /* height: 90% !important;
+         max-height: 91%; */
+    top: 30% !important;
+  }
+}
+.sidenav {
+  box-shadow: none !important;
+}
+
+nav ul a:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+ul.category:not(.browser-default) {
+  list-style-type: none;
+}
+
+.dropdown-content.collection {
+  min-width: 200px !important;
+  background: rgba(52, 67, 71, 0.9);
+}
+.category {
+  border-radius: 12px;
+}
+
+.dropdown-content {
+  align-content: center;
+  min-width: 29% !important;
+  overflow-y: auto !important;
+}
+
+.collection.with-header .collection-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.collection.with-header .collection-item {
+  background: rgba(52, 67, 71, 0);
+  border-bottom: lightblue;
+}
+
+.collection.with-header .collection-item {
+  padding-left: 10px !important;
+  margin-left: 0px;
+}
+
+.collection .collection-item {
+  padding: 2px 20px;
+}
+.dropdown-content li {
+  background: #53667b;
+  min-height: 20px;
+}
+ul.category:not(.browser-default) {
+  list-style-type: none;
+}
