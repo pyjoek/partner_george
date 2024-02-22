@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\COntroller\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('index');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashbord');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/people', function () {
+    return view('list-partners');
+})->middleware(['auth']);
+
+Route::get('/transaction', function () {
+    return view('transactions');
+})->middleware(['auth']);
+
+Route::get('/reports', function () {
+    return "Reports on the way";
+});
 
 require __DIR__.'/auth.php';
 
-Route::get('/log',function (){
-    return view('logi');
-});
+Route::post('/store', [PartnerController::class, 'store']);
+
+Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
+                ->name('logout');
