@@ -241,37 +241,119 @@
                 <div class="containing" style="border-radius: 8px 8px 0 0; margin-top: 10px;">
                     <div style="background:  rgba(51 ,51 ,51,.05);">
                         <div class="col s12 m12">
-                            <p class="center orange-text"
-                                style="font-weight: 500; font-size: 30px;margin-block-start: 0em; margin-block-end: 0.1em;">
-                                Partners List
-                            </p>
-                            <table class="striped left" style="background-color: bisque;">
-                                <thead class="white-text">
-                                    <tr class="blue-grey" style="border-radius: 0;">
-                                        <th class="chib" style="border-radius: 0;">Name</th>
-                                        <th class="cheb" style="border-radius: 0;">Email</th>
-                                        <th class="chib" style="border-radius: 0;">Phone</th>
-                                        <th class="chib" style="border-radius: 0;">Location</th>
-                                        <th class="chib" style="border-radius: 0;">Actions</th>
-                                    </tr>
-                                </thead>
+                            
+                            <div class="">
+        <div class="container upp">
+            <div class=" container">
+                <div class="containing">
+                    <div class="containing">
+                        <div class="col m12 s12">
+                            <div class="= card vile1">
+                               
+                                <div class="container" style="padding-bottom: 5px;" id="aziza">
+                                    <div class="center">
+                                        <img src="{{ asset('images/logo.png')}}" height="100" alt="">
+                                        <!-- <img src="inc/img/logo.png" height="100" alt=""> -->
+                                        <h5 class="center" style="font-weight: 500; margin-top: 5px; color: #da6a27 !important">
+                                            PARTNER REGISTRATION FORM
+                                        </h5>
+                                    </div>
 
-                                <tbody class="tdtd">
-                                    
-                                    @foreach ($partners as $partner)
-                                    <tr style="padding:5px 5px">
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> fname}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> email}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> phone}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> location}}</td>
-                                        <td style="padding:5px 5px" class="">
-                                          <a href="/edit/{{$partner -> id }}"><button type="button">edit</button></a>
-                                          <a href="/destroy/{{$partner -> id }}"><button type="button">del</button></a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    <div class="divider"
+                                        style="width: 20%; margin-left: 40%; margin-right: 40%; height: 3px; background-color: #da6a27; margin-top: 0px; margin-bottom: 0px;">
+                                    </div>
+                                    <form method="post" action="/store" autocomplete="off" enctype="multipart" class="">
+                                        @csrf
+                                        <div class="input-field a col s12 m12">
+                                            <i class="material-icons prefix blue-grey-text darken-3">person_pin</i>
+                                            <input type="text" id="fullname" name="fullname"
+                                            class="validate blue-grey-text darken-3" >
+                                            <label for="fullname">Full Name</label>
+                                        </div>
+
+                                        <div class="input-field a col s12 m12">
+                                            <i class="material-icons prefix blue-grey-text darken-3">email</i>
+                                            <input type="email" id="email" name="email"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="email">Email</label>
+                                        </div>
+
+                                        <div class="input-field a col s12 m12">
+                                            <i class="material-icons prefix blue-grey-text darken-3">phone</i>
+                                            <input type="number" id="phone" name="phone"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                        <div class="input-field a col s12 m6"
+                                            style="margin-top: .2rem;margin-bottom: 0;">
+                                            <i class="material-icons prefix blue-grey-text darken-3">location_city</i>
+                                            <label for="location">Your Location:</label>
+                                            <input type="text" id="location" name="location" placeholder="Enter your location">
+                                            <!-- <label>Nationality</label> -->
+                                        </div>
+                                        <div style="clear: both" class="center">
+                                            <button class="btn-flat white-text login hoverable blue-grey darken-3"
+                                                type="submit" onclick="myFunc(event)"
+                                                style="height: 30px;line-height: 25px;border-radius: 3px; margin-top: 10px;  background: linear-gradient(135deg,#ffa20c,#f92263) !important;">Sign
+                                                Up
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+                                    </form>
+
+
+
+                                    <div class="divider" style="margin-top: 10px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @if ($errors->any())
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @foreach ($errors->all() as $error)
+                M.toast({html: '{{ $error }}', classes: 'red darken-2 rounded'});
+            @endforeach
+        });
+    </script>
+@endif
+
+
+    <script src="{{ asset('js/jquery.min.js')}}"></script>
+    <script src="{{ asset( 'js/materialize.min.js')}}"></script>
+
+
+    <script>
+       
+window.addEventListener('load', () => {
+  getLocation();
+});
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  const locationInput = document.getElementById('location');
+  locationInput.value = `Latitude: ${latitude}, Longitude: ${longitude}`;
+}
+
+    </script>
                         </div>
                     </div>
                 </div>

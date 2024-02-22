@@ -19,7 +19,7 @@ class CreatePartnersTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('location');
-            $table->string('password')->default('1234');
+            $table->string('password')->default('1234'); 
             $table->timestamps();
         });
     }

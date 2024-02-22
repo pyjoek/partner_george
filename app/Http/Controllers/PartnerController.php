@@ -15,7 +15,8 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        //
+        $partners = Partner::all();
+        return view('list-partners', ['partners' => $partners]);
     }
 
     /**
@@ -53,7 +54,7 @@ class PartnerController extends Controller
         $datas->location = $request->location;
         $datas->save();
 
-        return redirect('/');
+        return redirect('/people');
     }
 
     /**
@@ -73,9 +74,10 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Partner $partner)
+    public function edit(Partner $partner, $id)
     {
-        //
+        $datas = Partner::find($id);
+        return view('list-partners-edit', compact('datas'));
     }
 
     /**
@@ -85,9 +87,16 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Partner $partner)
+    public function update(Request $request, $id)
     {
-        //
+        $datas = Partner::find($id);
+        $datas->fname = $request->fullname;
+        $datas->email = $request->email;
+        $datas->phone = $request->phone;
+        $datas->location = $request->location;
+        $datas->save();
+
+        return redirect('/people');
     }
 
     /**
@@ -96,8 +105,11 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partner $partner)
+    public function destroy(Partner $partner, $id)
     {
-        //
+        $datas = Partner::find($id);
+        $datas->delete();
+
+        return redirect('/people');
     }
 }

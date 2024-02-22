@@ -257,19 +257,27 @@
                                 </thead>
 
                                 <tbody class="tdtd">
-                                    
-                                    @foreach ($partners as $partner)
+                                    @if ($datas)
                                     <tr style="padding:5px 5px">
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> fname}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> email}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> phone}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> location}}</td>
-                                        <td style="padding:5px 5px" class="">
-                                          <a href="/edit/{{$partner -> id }}"><button type="button">edit</button></a>
-                                          <a href="/destroy/{{$partner -> id }}"><button type="button">del</button></a>
-                                        </td>
+                                       <form action="/update/{{$datas->id}}" method="post">
+                                        @csrf
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->fname}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="email" value="{{$datas->email}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="phone" value="{{$datas->phone}}"></td>
+
+                                                <td style="padding:5px 5px" class="blue-grey-text chib">
+                                                    <input type="text" name="location" value="{{ $datas -> location}}" readonly>
+                                                </td>
+
+                                                <td style="padding:5px 5px" class="">
+                                                <button type="submit">Save</button>
+                                                </td>
+                                       </form>
                                     </tr>
-                                    @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
@@ -279,7 +287,7 @@
         </div>
     </div>
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-medium blue-grey" href="/">
+        <a class="btn-floating btn-medium blue-grey" href="addpartner.html">
             <i class="large material-icons">add</i>
         </a>
         <ul>

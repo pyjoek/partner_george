@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- <link rel="stylesheet" href="inc/materialize.min.css"> -->
-    <!-- <link rel="stylesheet" href="inc/gold.css"> -->
-    <!-- <link rel="stylesheet" href="inc/material-icons.css"> -->
-    <!-- <link rel="stylesheet" href="inc/babylon.css"> -->
     <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/gold.css')}}">
     <link rel="stylesheet" href="{{asset('css/babylon.css')}}">
@@ -177,50 +173,7 @@
                     <div class="containing">
                         <div class="col m12 s12">
                             <div class="= card vile1">
-                                <!-- <div class="container" style="padding-bottom: 5px;" id="aziz">
-z                                        <img src="inc/img/logo.png" height="100" alt="">
-                                        <h5 class="center " style="font-weight: 500; margin-top: 5px; color: #da6a27 !important">
-                                            PARTNERS LOGIN
-                                        </h5>
-                                    </div>
-
-                                    <div class="divider"
-                                        style="width: 20%; margin-left: 40%; margin-right: 40%; height: 3px; background-color: #da6a27; margin-top: 0px; margin-bottom: 0px;">
-                                    </div>
-                                    <form method="post" action="system/index.html" name="login_form" name="login_form"
-                                        autocomplete="off" enctype="multipart" class="">
-                                        <div class="input-field a col s12 m12">
-                                            <i class="material-icons prefix blue-grey-text darken-3">person_pin</i>
-                                            <input type="text" id="username" name="username"
-                                                class="validate blue-grey-text darken-3" required>
-                                            <label for="username">Username or Email</label>
-                                        </div>
-
-                                        <div class="input-field a col s12 m12">
-                                            <i class="material-icons prefix blue-grey-text darken-3">lock</i>
-                                            <input type="password" id="password" name="password"
-                                                class="validate blue-grey-text darken-3" required>
-                                            <label for="password">Password</label>
-                                        </div>
-
-                                        <div class="center">
-                                           <button class="btn-flat white-text login hoverable blue-grey darken-3"
-                                                id="" type="submit" name="submit"
-                                                style="height: 30px;line-height: 25px;border-radius: 3px; margin-top: 10px;  background: linear-gradient(135deg,#ffa20c,#f92263) !important;">Sign
-                                                Up
-                                                <i class="material-icons right">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
-
-                                    <div class="divider" style="margin-top: 10px;"></div>
-
-                                    <p class="teal-text center">Dont have an account? <a id="list_in"
-                                            class="btn-flat blue-grey darken-3 white-text"
-                                            style="font-size: 12px; text-transform: none;height: 26px;line-height: 25px; background: linear-gradient(135deg,#ffa20c,#f92263);">Sign
-                                            Up</a></p>
-                                </div> -->
-
+                               
                                 <div class="container" style="padding-bottom: 5px;" id="aziza">
                                     <div class="center">
                                         <img src="{{ asset('images/logo.png')}}" height="100" alt="">
@@ -240,9 +193,6 @@ z                                        <img src="inc/img/logo.png" height="100
                                             <input type="text" id="fullname" name="fullname"
                                             class="validate blue-grey-text darken-3" >
                                             <label for="fullname">Full Name</label>
-                                            <!-- <em id="fullname_empty" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Full Name
-                                                Empty</em> -->
                                         </div>
 
                                         <div class="input-field a col s12 m12">
@@ -250,15 +200,6 @@ z                                        <img src="inc/img/logo.png" height="100
                                             <input type="email" id="email" name="email"
                                                 class="validate blue-grey-text darken-3" >
                                             <label for="email">Email</label>
-                                            <!-- <em id="email_exists" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Email
-                                                Exists</em>
-                                            <em id="email_invalid" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Email
-                                                Invalid</em>
-                                            <em id="email_empty" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Email
-                                                Empty</em> -->
                                         </div>
 
                                         <div class="input-field a col s12 m12">
@@ -266,12 +207,6 @@ z                                        <img src="inc/img/logo.png" height="100
                                             <input type="number" id="phone" name="phone"
                                                 class="validate blue-grey-text darken-3" >
                                             <label for="phone">Phone</label>
-                                            <!-- <em id="phone_exists" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Phone
-                                                Exists</em>
-                                            <em id="phone_empty" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Phone
-                                                Empty</em> -->
                                         </div>
                                         <div class="input-field a col s12 m6"
                                             style="margin-top: .2rem;margin-bottom: 0;">
@@ -280,28 +215,6 @@ z                                        <img src="inc/img/logo.png" height="100
                                             <input type="text" id="location" name="location" placeholder="Enter your location">
                                             <!-- <label>Nationality</label> -->
                                         </div>
-
-                                        <!-- <div class="input-field a col s12 m12">
-                                            <i class="material-icons prefix blue-grey-text darken-3">lock</i>
-                                            <input type="password" id="password_reg" name="password"
-                                                class="validate blue-grey-text darken-3" >
-                                            <label for="password_reg">Password</label>
-                                            <em id="password_empty" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Password
-                                                Empty</em>
-                                        </div> -->
-
-                                        <!-- <div class="input-field a col s12 m12">
-                                            <i class="material-icons prefix blue-grey-text darken-3">lock</i>
-                                            <input type="password" id="cpassword_reg" name="cpassword"
-                                                class="validate blue-grey-text darken-3" required>
-                                            <label for="cpassword_reg">Confirm Password</label>
-                                            <em id="cpassword_empty" class="red-text right"
-                                                style="margin-top: -8px; margin-left: 42px; font-size: 11px;">Confirm
-                                                Password Empty</em>
-                                        </div> -->
-
-
                                         <div style="clear: both" class="center">
                                             <button class="btn-flat white-text login hoverable blue-grey darken-3"
                                                 type="submit" onclick="myFunc(event)"
@@ -339,141 +252,12 @@ z                                        <img src="inc/img/logo.png" height="100
 @endif
 
 
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1JZ8MGdNxIHNVsihkOg8n4RL3Vjht6vQ&libraries=places"></script> -->
-    <!-- <script src="inc/jquery.min.js"></script>
-    <script src="inc/materialize.min.js"></script> -->
-
     <script src="{{ asset('js/jquery.min.js')}}"></script>
     <script src="{{ asset( 'js/materialize.min.js')}}"></script>
 
 
     <script>
-        // $(function () {
-        //     $('select').formSelect();
-        //     $("#email_exists").hide();
-        //     $("#email_invalid").hide();
-        //     $("#email_empty").hide();
-
-
-        //     $("#phone_exists").hide();
-        //     $("#phone_empty").hide();
-
-        //     $("#trno_exists").hide();
-        //     $("#trno_empty").hide();
-
-        //     $("#fullname_empty").hide();
-        //     $("#title_empty").hide();
-
-        //     $("#password_empty").hide();
-        //     $("#cpassword_empty").hide();
-
-        //     $("#aziza").hide();
-        //     $("#aziz").show();
-        // });
-
-        // $("#list_in").on("click", function () {
-        //     $("#aziz").hide();
-        //     $("#aziza").show();
-        // });
-        // $("#icon_in").on("click", function () {
-        //     $("#aziz").show();
-        //     $("#aziza").hide();
-        // });
-
-
-
-        // function myFunc(e) {
-        //     e.preventDefault();
-        //     var fullname = $('#fullname').val();
-        //     var id_no = $('#ID_no').val();
-        //     var email = $('#email').val();
-        //     var phone = $('#phone').val();
-        //     var title = $('#title').val();
-        //     var tr_no = $('#tr_no').val();
-        //     var password = $('#password_reg').val();
-        //     var cpassword = $('#cpassword_reg').val();
-
-        //     if (email == "") {
-        //         $("#email_empty").show();
-        //     } else {
-        //         $("#email_empty").hide();
-        //     }
-
-        //     if (id_no == "") {
-        //         $("#ID_no_empty").show();
-        //     } else {
-        //         $("#ID_no_empty").hide();
-        //     }
-
-        //     if (phone == "") {
-        //         $("#phone_empty").show();
-        //     } else {
-        //         $("#phone_empty").hide();
-        //     }
-
-        //     if (tr_no == "") {
-        //         $("#trno_empty").show();
-        //     } else {
-        //         $("#trno_empty").hide();
-        //     }
-
-        //     if (fullname == "") {
-        //         $("#fullname_empty").show();
-        //     } else {
-        //         $("#fullname_empty").hide();
-        //     }
-
-        //     if (title == "") {
-        //         $("#title_empty").show();
-        //     } else {
-        //         $("#title_empty").hide();
-        //     }
-
-        //     if (password == "") {
-        //         $("#password_empty").show();
-        //     } else {
-        //         $("#password_empty").hide();
-        //     }
-        //     if (cpassword == "") {
-        //         $("#cpassword_empty").show();
-        //     } else {
-        //         $("#cpassword_empty").hide();
-        //     }
-            
-        // }
-
-
        
-
-//AIzaSyC1JZ8MGdNxIHNVsihkOg8n4RL3Vjht6vQ (api)
-// window.addEventListener('load', () => {
-//   getLocation();
-// });
-
-// function getLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition);
-//   } else {
-//     alert("Geolocation is not supported by this browser.");
-//   }
-// }
-
-// function showPosition(position) {
-//   const latitude = position.coords.latitude;
-//   const longitude = position.coords.longitude;
-
-//   // Call reverse geocoding API to get the address from latitude and longitude
-//   fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyC1JZ8MGdNxIHNVsihkOg8n4RL3Vjht6vQ`)
-//     .then(response => response.json())
-//     .then(data => {
-//       const address = data.results[0].formatted_address;
-//       const locationInput = document.getElementById('location');
-//       locationInput.value = address;
-//     })
-//     .catch(error => console.log(error));
-// }
-
-
 window.addEventListener('load', () => {
   getLocation();
 });
@@ -489,9 +273,6 @@ function getLocation() {
 function showPosition(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
-
-  // You can use latitude and longitude to reverse geocode the location
-  // Here, I'm just setting the value of the input field as an example
   const locationInput = document.getElementById('location');
   locationInput.value = `Latitude: ${latitude}, Longitude: ${longitude}`;
 }

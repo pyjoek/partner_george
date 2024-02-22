@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
-use App\Http\COntroller\PartnerController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +16,14 @@ use App\Http\COntroller\PartnerController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('list-partners-add');
 });
 
 Route::get('/dashboard', function () {
     return view('dashbord');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/people', function () {
-    return view('list-partners');
-})->middleware(['auth']);
+Route::get('/people', [PartnerController::class, 'index'])->middleware(['auth']);
 
 Route::get('/transaction', function () {
     return view('transactions');
@@ -34,6 +32,16 @@ Route::get('/transaction', function () {
 Route::get('/reports', function () {
     return "Reports on the way";
 });
+
+
+
+Route::get('/destroy/{id}', [PartnerController::class, 'destroy']);
+Route::post('/update/{id}', [PartnerController::class, 'update']);
+Route::Get('/edit', function() {
+    return view('list-partners-edit');
+});
+
+Route::get('/edit/{id}', [PartnerController::class, 'edit']);
 
 require __DIR__.'/auth.php';
 
