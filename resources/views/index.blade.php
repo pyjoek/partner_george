@@ -3,13 +3,295 @@
 
 <head>
     <link rel="stylesheet" href="{{asset('css/materialize.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/gold.css')}}">
-    <link rel="stylesheet" href="{{asset('css/babylon.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/gold.css')}}">
+    <link rel="stylesheet" href="{{asset('css/babylon.css')}}"> -->
     <link rel="stylesheet" href="{{asset('css/material-icons.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="inc/img/logo4b.ico" type="image/x-icon">
     <title>Pastpr Tony Kapola</title>
-    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const countryNames = [
+"Afghanistan",
+  "Åland Islands",
+  "Albania",
+  "Algeria",
+  "American Samoa",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas (the)",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bermuda",
+  "Bhutan",
+  "Bolivia (Plurinational State of)",
+  "Bonaire, Sint Eustatius and Saba",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Bouvet Island",
+  "Brazil",
+  "British Indian Ocean Territory (the)",
+  "Brunei Darussalam",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cayman Islands (the)",
+  "Central African Republic (the)",
+  "Chad",
+  "Chile",
+  "China",
+  "Christmas Island",
+  "Cocos (Keeling) Islands (the)",
+  "Colombia",
+  "Comoros (the)",
+  "Congo (the Democratic Republic of the)",
+  "Congo (the)",
+  "Cook Islands (the)",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Curaçao",
+  "Cyprus",
+  "Czechia",
+  "Côte d'Ivoire",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic (the)",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Falkland Islands (the) [Malvinas]",
+  "Faroe Islands (the)",
+  "Fiji",
+  "Finland",
+  "France",
+  "French Guiana",
+  "French Polynesia",
+  "French Southern Territories (the)",
+  "Gabon",
+  "Gambia (the)",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Gibraltar",
+  "Greece",
+  "Greenland",
+  "Grenada",
+  "Guadeloupe",
+  "Guam",
+  "Guatemala",
+  "Guernsey",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Heard Island and McDonald Islands",
+  "Holy See (the)",
+  "Honduras",
+  "Hong Kong",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran (Islamic Republic of)",
+  "Iraq",
+  "Ireland",
+  "Isle of Man",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jersey",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Korea (the Democratic People's Republic of)",
+  "Korea (the Republic of)",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Lao People's Democratic Republic (the)",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macao",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands (the)",
+  "Martinique",
+  "Mauritania",
+  "Mauritius",
+  "Mayotte",
+  "Mexico",
+  "Micronesia (Federated States of)",
+  "Moldova (the Republic of)",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Montserrat",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands (the)",
+  "New Caledonia",
+  "New Zealand",
+  "Nicaragua",
+  "Niger (the)",
+  "Nigeria",
+  "Niue",
+  "Norfolk Island",
+  "Northern Mariana Islands (the)",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine, State of",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines (the)",
+  "Pitcairn",
+  "Poland",
+  "Portugal",
+  "Puerto Rico",
+  "Qatar",
+  "Republic of North Macedonia",
+  "Romania",
+  "Russian Federation (the)",
+  "Rwanda",
+  "Réunion",
+  "Saint Barthélemy",
+  "Saint Helena, Ascension and Tristan da Cunha",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Martin (French part)",
+  "Saint Pierre and Miquelon",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Sint Maarten (Dutch part)",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Georgia and the South Sandwich Islands",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan (the)",
+  "Suriname",
+  "Svalbard and Jan Mayen",
+  "Sweden",
+  "Switzerland",
+  "Syrian Arab Republic",
+  "Taiwan (Province of China)",
+  "Tajikistan",
+  "Tanzania, United Republic of",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tokelau",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Turks and Caicos Islands (the)",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates (the)",
+  "United Kingdom of Great Britain and Northern Ireland (the)",
+  "United States Minor Outlying Islands (the)",
+  "United States of America (the)",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Venezuela (Bolivarian Republic of)",
+  "Viet Nam",
+  "Virgin Islands (British)",
+  "Virgin Islands (U.S.)",
+  "Wallis and Futuna",
+  "Western Sahara",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe"
+      ];
+
+      const inputField = document.getElementById('country');
+      const dataList = document.createElement('datalist');
+      dataList.id = 'countryList';
+      inputField.setAttribute('list', 'countryList');
+      inputField.parentNode.appendChild(dataList);
+
+      function suggestCountries() {
+        const input = inputField.value.toLowerCase();
+        const options = [];
+
+        countryNames.forEach(country => {
+          if (country.toLowerCase().startsWith(input)) {
+            options.push(country);
+          }
+        });
+
+        const dataList = document.getElementById('countryList');
+        dataList.innerHTML = ''; // Clear previous options
+
+        options.forEach(option => {
+          const optionElement = document.createElement('option');
+          optionElement.value = option;
+          dataList.appendChild(optionElement);
+        });
+      }
+
+      inputField.addEventListener('input', suggestCountries);
+    });
+  </script>
 </head>
 
 <style>
@@ -186,7 +468,7 @@
                                     <div class="divider"
                                         style="width: 20%; margin-left: 40%; margin-right: 40%; height: 3px; background-color: #da6a27; margin-top: 0px; margin-bottom: 0px;">
                                     </div>
-                                    <form method="post" action="/store" autocomplete="off" enctype="multipart" class="">
+                                    <form method="post" action="/store" autocomplete="off" enctype="multipart" class="form">
                                         @csrf
                                         <div class="input-field a col s12 m12">
                                             <i class="material-icons prefix blue-grey-text darken-3">person_pin</i>
@@ -207,26 +489,63 @@
                                             <input type="number" id="phone" name="phone"
                                                 class="validate blue-grey-text darken-3" >
                                             <label for="phone">Phone</label>
-                                        </div>
+                                        </div> 
                                         <div class="input-field a col s12 m6"
                                             style="margin-top: .2rem;margin-bottom: 0;">
-                                            <i class="material-icons prefix blue-grey-text darken-3">location_city</i>
-                                            <label for="location">Your Location:</label>
-                                            <input type="text" id="location" name="location" placeholder="Enter your location">
+                                            <!-- <i class="material-icons prefix blue-grey-text darken-3">location_city</i> -->
+                                            <input type="text" id="location" name="location" placeholder="Enter your location" hidden>
                                             <!-- <label>Nationality</label> -->
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field a col s12 m6">
+                                                <i class="material-icons prefix blue-grey-text darken-3">location_on</i>
+                                                <input type="text" id="country" class="autocomplete" name="country" class="validate blue-grey-text darken-3" >
+                                                <label for="country">Country</label>
+                                                </div>
+                                              
+                                                                        
+                                        
+                                        
+                                            <!-- <input type="text" id="country" name="country"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="country">Country</label>
+                                        </div> -->
+                                        <div class="input-field a col s12 m6">
+                                            <i class="material-icons prefix blue-grey-text darken-3">landscape</i>
+                                            <input type="text" id="region" name="region"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="region">City / Region</label>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="input-field a col s12 m5">
+                                            <i class="material-icons prefix blue-grey-text darken-3">format_list_numbered</i>
+                                            <input type="number" id="amount" name="amount"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="amount">Amount</label>
+                                        </div>
+                                        <div class="input-field a col s12 m7">
+                                            <i class="material-icons prefix blue-grey-text darken-3">widgets</i>
+                                            <input type="text" id="material" name="material"
+                                                class="validate blue-grey-text darken-3" >
+                                            <label for="material">Material</label>
+                                        </div>
+                                        </div>
+                                        <div class="input-field a col s12 m12">
+                                            <i class="material-icons prefix blue-grey-text darken-3">date_range</i>
+                                            <input type="number" id="duration" name="duration"
+                                                class="validate blue-grey-text darken-3"  Placeholder="Insert number of weeks">
+                                            <label for="duration">Duration</label>
                                         </div>
                                         <div style="clear: both" class="center">
                                             <button class="btn-flat white-text login hoverable blue-grey darken-3"
                                                 type="submit" onclick="myFunc(event)"
-                                                style="height: 30px;line-height: 25px;border-radius: 3px; margin-top: 10px;  background: linear-gradient(135deg,#ffa20c,#f92263) !important;">Sign
-                                                Up
+                                                style="height: 30px;line-height: 25px;border-radius: 3px; margin-top: 10px;  background: linear-gradient(135deg,#ffa20c,#f92263) !important;">SUBMIT
+                                                
                                                 <i class="material-icons right">send</i>
                                             </button>
                                         </div>
                                     </form>
-
-
-
                                     <div class="divider" style="margin-top: 10px;"></div>
 
                                 </div>

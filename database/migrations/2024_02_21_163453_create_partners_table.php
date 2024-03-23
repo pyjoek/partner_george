@@ -18,8 +18,12 @@ class CreatePartnersTable extends Migration
             $table->string('fname');
             $table->string('email');
             $table->string('phone');
-            $table->string('location');
             $table->string('password')->default('1234'); 
+            $table->string('country');
+            $table->integer('amount');
+            $table->string('material');
+            $table->string('region')->default('Dar es salaam');
+            $table->integer('duration');
             $table->timestamps();
         });
     }

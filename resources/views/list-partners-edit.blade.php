@@ -251,7 +251,11 @@
                                         <th class="chib" style="border-radius: 0;">Name</th>
                                         <th class="cheb" style="border-radius: 0;">Email</th>
                                         <th class="chib" style="border-radius: 0;">Phone</th>
-                                        <th class="chib" style="border-radius: 0;">Location</th>
+                                        <th class="chib" style="border-radius: 0;">Country</th>
+                                        <th class="chib" style="border-radius: 0;">Region</th>
+                                        <th class="chib" style="border-radius: 0;">Amount</th>
+                                        <th class="chib" style="border-radius: 0;">Material</th>
+                                        <th class="chib" style="border-radius: 0;">Duration</th>
                                         <th class="chib" style="border-radius: 0;">Actions</th>
                                     </tr>
                                 </thead>
@@ -267,14 +271,19 @@
                                             <input type="text" name="email" value="{{$datas->email}}"></td>
                                             <td style="padding:5px 5px" class="blue-grey-text chib">
                                             <input type="text" name="phone" value="{{$datas->phone}}"></td>
-
-                                                <td style="padding:5px 5px" class="blue-grey-text chib">
-                                                    <input type="text" name="location" value="{{ $datas -> location}}" readonly>
-                                                </td>
-
-                                                <td style="padding:5px 5px" class="">
-                                                <button type="submit">Save</button>
-                                                </td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->country}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->region}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->amount}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->material}}"></td>
+                                            <td style="padding:5px 5px" class="blue-grey-text chib">
+                                            <input type="text" name="fullname" value="{{$datas->duration}}"></td>
+                                            <td style="padding:5px 5px" class="">
+                                            <button type="submit">Save</button>
+                                            </td>
                                        </form>
                                     </tr>
                                     @endif

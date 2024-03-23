@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
 use App\Models\Partner;
+use App\Exports\UserExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
@@ -41,7 +43,8 @@ class PartnerController extends Controller
         $validator = Validator::make($request->all(),[
             'fullname' => 'required|string|min:5',
             'email' => 'required|string|email',
-            'phone' => 'required'
+            'phone' => 'required',
+            'duration' => 'required|numeric'
         ]);
         
         if($validator->fails()){
@@ -51,7 +54,11 @@ class PartnerController extends Controller
         $datas->fname = $request->fullname;
         $datas->email = $request->email;
         $datas->phone = $request->phone;
-        $datas->location = $request->location;
+        $datas->country = $request->country;
+        $datas->region = $request->region;
+        $datas->material = $request->material;
+        $datas->amount = $request->amount;
+        $datas->duration = $request->duration;
         $datas->save();
 
         return redirect('/people');
@@ -66,6 +73,11 @@ class PartnerController extends Controller
     public function show(Partner $partner)
     {
         //
+    }
+
+    public function export()
+    {
+        return Excel::download(new UserExport, 'users.xlsx');
     }
 
     /**
@@ -94,6 +106,11 @@ class PartnerController extends Controller
         $datas->email = $request->email;
         $datas->phone = $request->phone;
         $datas->location = $request->location;
+        $datas->country = $request->country;
+        $datas->region = $request->region;
+        $datas->material = $request->material;
+        $datas->amount = $request->amount;
+        $datas->duration = $request->duration;
         $datas->save();
 
         return redirect('/people');

@@ -240,7 +240,12 @@
                 <div class="spacer"></div>
                 <div class="containing" style="border-radius: 8px 8px 0 0; margin-top: 10px;">
                     <div style="background:  rgba(51 ,51 ,51,.05);">
-                        <div class="col s12 m12">
+                        <div class="">
+                        <button class="btn waves-effect waves-light" id="exportButton" >Export
+                            <a href="/export-users"><i class="material-icons right">send</i></a>
+                        </button>
+                        </div> 
+                    <div class="col s12 m12">
                             <p class="center orange-text"
                                 style="font-weight: 500; font-size: 30px;margin-block-start: 0em; margin-block-end: 0.1em;">
                                 Partners List
@@ -251,22 +256,31 @@
                                         <th class="chib" style="border-radius: 0;">Name</th>
                                         <th class="cheb" style="border-radius: 0;">Email</th>
                                         <th class="chib" style="border-radius: 0;">Phone</th>
-                                        <th class="chib" style="border-radius: 0;">Location</th>
+                                        <th class="chib" style="border-radius: 0;">Country</th>
+                                        <th class="chib" style="border-radius: 0;">Region</th>
+                                        <th class="chib" style="border-radius: 0;">Amount</th>
+                                        <th class="chib" style="border-radius: 0;">Material</th>
+                                        <th class="chib" style="border-radius: 0;">Duration</th>
                                         <th class="chib" style="border-radius: 0;">Actions</th>
                                     </tr>
                                 </thead>
 
                                 <tbody class="tdtd">
                                     
-                                    @foreach ($partners as $partner)
+                                    @foreach ($partners as $datas)
                                     <tr style="padding:5px 5px">
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> fname}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$partner -> email}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> phone}}</td>
-                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{ $partner -> location}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->fname}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->email}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->phone}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->country}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->region}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->amount}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->material}}</td>
+                                        <td style="padding:5px 5px" class="blue-grey-text chib">{{$datas->duration}}</td>
+
                                         <td style="padding:5px 5px" class="">
-                                          <a href="/edit/{{$partner -> id }}"><button type="button">edit</button></a>
-                                          <a href="/destroy/{{$partner -> id }}"><button type="button">del</button></a>
+                                          <a href="/edit/{{$datas -> id }}"><button type="button">edit</button></a>
+                                          <a href="/destroy/{{$datas -> id }}"><button type="button">del</button></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -294,6 +308,22 @@
 
 
     <script>
+        
+        document.getElementById('exportButton').addEventListener('click', function() {
+        fetch('{{ route('export.users') }}')
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'users.xlsx';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Error exporting users:', error));
+    });
+
         const slider = document.querySelector('.slider');
         M.Slider.init(slider, {
             indicators: false,

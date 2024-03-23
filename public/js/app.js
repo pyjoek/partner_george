@@ -22956,6 +22956,27 @@ __webpack_require__.r(__webpack_exports__);
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('countries.json').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    var options = {};
+    data.forEach(function (item) {
+      options[item] = null;
+    });
+
+    // Initialize Autocomplete
+    var autocompleteInput = document.getElementById('autocomplete-input');
+    M.Autocomplete.init(autocompleteInput, {
+      data: options,
+      onAutocomplete: function onAutocomplete(selection) {
+        console.log('You selected: ' + selection);
+      }
+    });
+  })["catch"](function (error) {
+    return console.error('Error fetching data:', error);
+  });
+});
 })();
 
 /******/ })()

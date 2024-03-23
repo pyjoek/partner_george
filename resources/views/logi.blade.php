@@ -207,16 +207,11 @@
                                            <button class="btn-flat white-text login hoverable blue-grey darken-3"
                                                 id="" type="submit" name="submit"
                                                 style="height: 30px;line-height: 25px;border-radius: 3px; margin-top: 10px;  background: linear-gradient(135deg,#ffa20c,#f92263) !important;">Sign
-                                                Up
+                                                In
                                                 <i class="material-icons right">send</i>
                                             </button>
                                         </div>
                                     </form>
-
-                                   
-
-                                
-
 
                                      <div class="divider" style="margin-top: 10px;"></div>
                                 </div> 
